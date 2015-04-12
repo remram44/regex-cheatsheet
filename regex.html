@@ -20,7 +20,18 @@
 
     <style>
 td.na {
-    background: #F4E5E5;
+  background: #F4E5E5;
+}
+
+@media print {
+  /* Overrides bootstrap's' stylesheet: don't show URLs when printing */
+  a[href]:after {
+    content: none;
+  }
+
+  td.na {
+    background: #EEE;
+  }
 }
     </style>
 
@@ -32,19 +43,20 @@ td.na {
   </head>
   <body role="document">
 
-<a href="https://github.com/remram44/regex-cheatsheet"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+<div class="hidden-print">
+  <a href="https://github.com/remram44/regex-cheatsheet"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+</div>
 
     <div class="container" role="main">
 
-<h1>Regex cheatsheet</h1>
+<div class="hidden-print">
+  <h1>Regex cheatsheet</h1>
 
-<p>Many programs use regular expression to find &amp; replace text. However, they tend to come with their own different flavor.</p>
-
-<p>You can probably expect most modern software and programming languages to be using some variation of the Perl flavor, "PCRE"; however command-line tools (grep, less, ...) will often use the POSIX flavor (sometimes with an extended variant, e.g. <code>egrep</code> or <code>sed -r</code>). ViM also comes with its own syntax (a superset of what Vi accepts).</p>
-
-<p>This cheatsheet lists the respective <a href="#syntax">syntax of each flavor</a>, and the <a href="#programs">software that uses it</a>.</p>
-
-<p>If you spot errors or missing data, or just want to make this prettier/more accurate, don't hesitate to open an <a href="https://github.com/remram44/regex-cheatsheet/issues/new">issue</a> or a <a href="https://github.com/remram44/regex-cheatsheet/compare/">pull request</a>.</p>
+  <p>Many programs use regular expression to find &amp; replace text. However, they tend to come with their own different flavor.</p>
+  <p>You can probably expect most modern software and programming languages to be using some variation of the Perl flavor, "PCRE"; however command-line tools (grep, less, ...) will often use the POSIX flavor (sometimes with an extended variant, e.g. <code>egrep</code> or <code>sed -r</code>). ViM also comes with its own syntax (a superset of what Vi accepts).</p>
+  <p>This cheatsheet lists the respective <a href="#syntax">syntax of each flavor</a>, and the <a href="#programs">software that uses it</a>.</p>
+  <p>If you spot errors or missing data, or just want to make this prettier/more accurate, don't hesitate to open an <a href="https://github.com/remram44/regex-cheatsheet/issues/new">issue</a> or a <a href="https://github.com/remram44/regex-cheatsheet/compare/">pull request</a>.</p>
+</div>
 
 <h1 id="syntax">Syntax</h1>
 
