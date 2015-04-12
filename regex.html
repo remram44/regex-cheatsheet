@@ -14,6 +14,18 @@ td.na {
   </head>
   <body>
 
+<h1>Regex cheatsheet</h1>
+
+<p>Many programs use regular expression to find & replace text. However, they tend to come with their own different flavor.</p>
+
+<p>You can probably expect most modern software and programming languages to be using some variation of the Perl flavor, "PCRE"; however command-line tools (grep, less, ...) will often use the POSIX flavor (sometimes with an extended variant, e.g. <tt>egrep</tt> or <tt>sed -r</tt>). ViM also comes with its own syntax (a superset of what Vi accepts).</p>
+
+<p>This cheatsheet lists the respective <a href="#syntax">syntax of each flavor</a>, and the <a href="#programs">software that uses it</a>.</p>
+
+<p>If you spot errors or missing data, or just want to make this prettier/more accurate, don't hesitate to open an <a href="https://github.com/remram44/regex-cheatsheet/issues/new">issue</a> or a <a href="https://github.com/remram44/regex-cheatsheet/compare/">pull request</a>.</p>
+
+<h1 id="syntax">Syntax</h1>
+
 <table>
 <tr><th>What</th><th>PCRE</th><th>POSIX (BRE)</th><th>POSIX extended (ERE)</th><th>ViM</th></tr>
  <tr><th colspan="5">Basics</th></tr>
@@ -69,6 +81,32 @@ td.na {
  <tr><th colspan="5">Other</th></tr>
  <tr><td>Independent non-backtracking pattern</td><td>(?&gt;...)</td><td class="na">&nbsp;</td><td class="na">&nbsp;</td><td>\(...\)\@&gt;</td></tr>
  <tr><td>Make case-sensitive/insensitive</td><td>(?i) / (?-i)</td><td class="na">&nbsp;</td><td class="na">&nbsp;</td><td>\c / \C</td></tr>
+</table>
+
+<h1 id="programs">Programs</h1>
+
+<table>
+  <tr><th>What</th><th>Syntax</th><th>Comments/gotchas</th></tr>
+  <tr><th colspan="3">Programming languages</th></tr>
+  <tr><td><a href="http://perldoc.perl.org/perlre.html">Perl</a></td><td>PCRE</td><td>PCRE is actually a separate implementation from Perl's, with <a href="http://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions#Differences_from_Perl">slight differences</a></td></tr>
+  <tr><td><a href="https://docs.python.org/library/re.html">Python's <tt>re</tt> standard lib</a></td><td>Python's own syntax (Perl-inspired)</td><td>TODO: add this as a column</td></tr>
+  <tr><td><a href="http://ruby-doc.org/core-2.2.0/Regexp.html">Ruby</a></td><td>Ruby's own syntax (Perl-inspired)</td><td></td></tr>
+  <tr><td><a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html">Java's java.util.regex</a></td><td>Almost PCRE</td><td></td></tr>
+  <tr><th colspan="3">Text editors</th></tr>
+  <tr><td>Eclipse</td><td>PCRE</td><td></td></tr>
+  <tr><td>Emacs</td><td>?</td><td></td></tr>
+  <tr><td>Netbeans</td><td>PCRE</td><td></td></tr>
+  <tr><td>Notepad++</td><td>PCRE</td><td></td></tr>
+  <tr><td>PyCharm</td><td>PCRE</td><td>Perl-inspired</td></tr>
+  <tr><td>Sublime Text</td><td>?</td><td></td></tr>
+  <tr><td>UltraEdit</td><td>PCRE</td><td></td></tr>
+  <tr><td>ViM</td><td>ViM</td><td></td></tr>
+  <tr><th colspan="3">Command-line tools</th></tr>
+  <tr><td>awk</td><td>?</td><td></td></tr>
+  <tr><td>grep</td><td>BRE, <tt>-E</tt> for ERE, <tt>-P</tt> for PCRE (optional)</td><td>OS X?</td></tr>
+  <tr><td>less</td><td>?</td><td></td></tr>
+  <tr><td>screen</td><td>?</td><td></td></tr>
+  <tr><td>sed</td><td>BRE, <tt>-r</tt> switches to ERE</td><td>OS X?</td></tr>
 </table>
 
   </body>

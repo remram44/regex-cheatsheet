@@ -1,13 +1,14 @@
 Cheatsheet for regex syntaxes
 =============================
 
-Many software use regular expression to find & replace text. However, they tend
+Many programs use regular expression to find & replace text. However, they tend
 to come with their own different flavor.
 
 You can probably expect most modern software and programming languages to be
-using the Perl flavor, "PCRE"; however command-line tools (grep, less, ...)
-often use the POSIX flavor (sometimes with an extended variant, e.g. `egrep` or
-`sed -r`). ViM also comes with its own syntax (a superset of what Vi accepts).
+using some variation of the Perl flavor, "PCRE"; however command-line tools
+(grep, less, ...) often use the POSIX flavor (sometimes with an extended
+variant, e.g. `egrep` or `sed -r`). ViM also comes with its own syntax (a
+superset of what Vi accepts).
 
 This cheatsheet lists the respective syntax they each use.
 
