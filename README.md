@@ -16,6 +16,10 @@ accurate, don't hesitate to open an [issue][is] or a [pull request][pr].
 
 The rendered cheatsheet is available here: [regex cheatsheet][cc]
 
+Note that this is still a work in progress; a lot of entries need some details
+in some kind of tooltip.
+
+
 [cc]: http://htmlpreview.github.io/?https://github.com/remram44/regex-cheatsheet/blob/master/regex.html
 [is]: https://github.com/remram44/regex-cheatsheet/issues/new
 [pr]: https://github.com/remram44/regex-cheatsheet/compare/
