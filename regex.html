@@ -11,6 +11,13 @@ table th, table td {
 td.na {
     background: #777;
 }
+
+tt {
+    background-color: #DDD;
+    border: 1px dashed #BBB;
+    margin-right: 2px;
+    margin-left: 2px;
+}
     </style>
   </head>
   <body>
@@ -32,58 +39,58 @@ td.na {
 <table>
 <tr><th>What</th><th><a href="http://perldoc.perl.org/perlre.html">Perl</a>/PCRE</th><th><a href="https://docs.python.org/library/re.html">Python's <tt>re</tt></a></th><th>POSIX (BRE)</th><th>POSIX extended (ERE)</th><th>ViM</th></tr>
  <tr><th colspan="6">Basics</th></tr>
- <tr><td>Custom character class</td><td>[...]</td><td>[...]</td><td>[...]</td><td>[...]</td><td>[...]</td></tr>
- <tr><td>Negated custom character class</td><td>[^...]</td><td>[^...]</td><td>[^...]</td><td>[^...]</td><td>[^...]</td></tr>
- <tr><td>\ special in class?</td><td>yes</td><td>yes</td><td>no, ] escaped if comes first</td><td></td><td></td></tr>
- <tr><td>Ranges</td><td>[a-z] - escaped if comes last</td><td>[a-z] - escaped if first or last</td><td>[a-z] - escaped if comes last</td><td></td><td>[a-z]</td></tr>
- <tr><td>Alternation</td><td>|</td><td>|</td><td class="na"></td><td>|</td><td>\| \& (low precedence)</td></tr>
- <tr><td>Escaped character</td><td>\033 \x1B \x{1234} \N{name} \N{U+263D}</td><td>\x12</td><td class="na"></td><td class="na"></td><td>\%d123 \%x2A \%u1234 \%U1234ABCD</td></tr>
+ <tr><td>Custom character class</td><td><tt>[...]</tt></td><td><tt>[...]</tt></td><td><tt>[...]</tt></td><td><tt>[...]</tt></td><td><tt>[...]</tt></td></tr>
+ <tr><td>Negated custom character class</td><td><tt>[^...]</tt></td><td><tt>[^...]</tt></td><td><tt>[^...]</tt></td><td><tt>[^...]</tt></td><td><tt>[^...]</tt></td></tr>
+ <tr><td>\ special in class?</td><td>yes</td><td>yes</td><td>no, <tt>]</tt> escaped if comes first</td><td></td><td></td></tr>
+ <tr><td>Ranges</td><td><tt>[a-z]</tt>, <tt>-</tt> escaped if comes last</td><td><tt>[a-z]</tt>, <tt>-</tt> escaped if first or last</td><td><tt>[a-z]</tt>, <tt>-</tt> escaped if comes last</td><td></td><td><tt>[a-z]</tt></td></tr>
+ <tr><td>Alternation</td><td><tt>|</tt></td><td><tt>|</tt></td><td class="na"></td><td><tt>|</tt></td><td><tt>\|</tt> <tt>\&amp;</tt> (low precedence)</td></tr>
+ <tr><td>Escaped character</td><td><tt>\033</tt> <tt>\x1B</tt> <tt>\x{1234}</tt> <tt>\N{name}</tt> <tt>\N{U+263D}</tt></td><td><tt>\x12</tt></td><td class="na"></td><td class="na"></td><td><tt>\%d123</tt> <tt>\%x2A</tt> <tt>\%u1234</tt> <tt>\%U1234ABCD</tt></td></tr>
  <tr><th colspan="6">Character classes</th></tr>
- <tr><td>Any character (except newline)</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
- <tr><td>Any character (including newline)</td><td class="na"></td><td class="na"></td><td class="na"></td><td class="na"></td><td>\_.</td></tr>
- <tr><td>Match a "word" character (alphanumeric plus "_")</td><td>\w [[:word:]]</td><td>\w</td><td>[[:word:]]</td><td>[[:word:]]</td><td>\w</td></tr>
- <tr><td>Case</td><td>[[:upper:]] / [[:lower:]]</td><td class="na"></td><td>[[:upper:]] / [[:lower:]]</td><td>[[:upper:]] / [[:lower:]]</td><td>\u [[:upper:]] / \l [[:lower:]]</td></tr>
- <tr><td>Match a non-"word" character</td><td>\W</td><td>\W</td><td class="na"></td><td class="na"></td><td>\W</td></tr>
- <tr><td>Match a whitespace character (except newline)</td><td class="na"></td><td class="na"></td><td></td><td></td><td>\s [[:space:]]</td></tr>
- <tr><td>Whitespace including newline</td><td>\s [[:space:]]</td><td>\s</td><td>[[:space:]]</td><td>[[:space:]]</td><td>\_s</td></tr>
- <tr><td>Match a non-whitespace character</td><td>\S</td><td>\S</td><td class="na"></td><td class="na"></td><td>\S</td></tr>
- <tr><td>Match a digit character</td><td>\d [[:digit:]]</td><td>\d</td><td>[[:digit:]]</td><td>[[:digit:]]</td><td>\d [[:digit:]]</td></tr>
- <tr><td>Match a non-digit character</td><td>\D</td><td>\D</td><td class="na"></td><td class="na"></td><td>\D</td></tr>
- <tr><td>Any hexadecimal digit</td><td>[[:xdigit:]]</td><td class="na"></td><td>[[:xdigit:]]</td><td>[[:xdigit:]]</td><td>\x [[:xdigit:]]</td></tr>
- <tr><td>Any octal digit</td><td></td><td class="na"></td><td></td><td></td><td>\o</td></tr>
- <tr><td>Any graphical character excluding "word" characters</td><td>[[:punct:]]</td><td class="na"></td><td>[[:punct:]]</td><td>[[:punct:]]</td><td>[[:punct:]]</td></tr>
- <tr><td>Any alphabetical character</td><td>[[:alpha:]]</td><td class="na"></td><td>[[:alpha:]]</td><td>[[:alpha:]]</td><td>\a [[:alpha:]]</td></tr>
- <tr><td>Non-alphabetical character</td><td></td><td class="na"></td><td></td><td></td><td>\A</td></tr>
- <tr><td>Any alphanumerical character</td><td>[[:alnum:]]</td><td class="na"></td><td>[[:alnum:]]</td><td>[[:alnum:]]</td><td>[[:alnum:]]</td></tr>
- <tr><td>ASCII</td><td>[[:ascii:]]</td><td class="na"></td><td>[[:ascii:]]</td><td>[[:ascii:]]</td><td class="na"></td></tr>
- <tr><td>Character equivalents (e = é = è) (as per locale)</td><td></td><td class="na"></td><td>[[=e=]]</td><td>[[=e=]]</td><td>[[=e=]]</td></tr>
+ <tr><td>Any character (except newline)</td><td><tt>.</tt></td><td><tt>.</tt></td><td><tt>.</tt></td><td><tt>.</tt></td><td><tt>.</tt></td></tr>
+ <tr><td>Any character (including newline)</td><td class="na"></td><td class="na"></td><td class="na"></td><td class="na"></td><td><tt>\_.</tt></td></tr>
+ <tr><td>Match a "word" character (alphanumeric plus <tt>_</tt>)</td><td><tt>\w</tt> <tt>[[:word:]]</tt></td><td><tt>\w</tt></td><td><tt>[[:word:]]</tt></td><td><tt>[[:word:]]</tt></td><td><tt>\w</tt></td></tr>
+ <tr><td>Case</td><td><tt>[[:upper:]]</tt> / <tt>[[:lower:]]</tt></td><td class="na"></td><td><tt>[[:upper:]]</tt> / <tt>[[:lower:]]</tt></td><td><tt>[[:upper:]]</tt> / <tt>[[:lower:]]</tt></td><td><tt>\u</tt> <tt>[[:upper:]]</tt> / <tt>\l</tt> <tt>[[:lower:]]</tt></td></tr>
+ <tr><td>Match a non-"word" character</td><td><tt>\W</tt></td><td><tt>\W</tt></td><td class="na"></td><td class="na"></td><td><tt>\W</tt></td></tr>
+ <tr><td>Match a whitespace character (except newline)</td><td class="na"></td><td class="na"></td><td></td><td></td><td><tt>\s</tt> <tt>[[:space:]]</tt></td></tr>
+ <tr><td>Whitespace including newline</td><td><tt>\s</tt> <tt>[[:space:]]</tt></td><td><tt>\s</tt></td><td><tt>[[:space:]]</tt></td><td><tt>[[:space:]]</tt></td><td><tt>\_s</tt></td></tr>
+ <tr><td>Match a non-whitespace character</td><td><tt>\S</tt></td><td><tt>\S</tt></td><td class="na"></td><td class="na"></td><td><tt>\S</tt></td></tr>
+ <tr><td>Match a digit character</td><td><tt>\d</tt> <tt>[[:digit:]]</tt></td><td><tt>\d</tt></td><td><tt>[[:digit:]]</tt></td><td><tt>[[:digit:]]</tt></td><td><tt>\d</tt> <tt>[[:digit:]]</tt></td></tr>
+ <tr><td>Match a non-digit character</td><td><tt>\D</tt></td><td><tt>\D</tt></td><td class="na"></td><td class="na"></td><td><tt>\D</tt></td></tr>
+ <tr><td>Any hexadecimal digit</td><td><tt>[[:xdigit:]]</tt></td><td class="na"></td><td><tt>[[:xdigit:]]</tt></td><td><tt>[[:xdigit:]]</tt></td><td><tt>\x</tt> <tt>[[:xdigit:]]</tt></td></tr>
+ <tr><td>Any octal digit</td><td></td><td class="na"></td><td></td><td></td><td><tt>\o</tt></td></tr>
+ <tr><td>Any graphical character excluding "word" characters</td><td><tt>[[:punct:]]</tt></td><td class="na"></td><td><tt>[[:punct:]]</tt></td><td><tt>[[:punct:]]</tt></td><td><tt>[[:punct:]]</tt></td></tr>
+ <tr><td>Any alphabetical character</td><td><tt>[[:alpha:]]</tt></td><td class="na"></td><td><tt>[[:alpha:]]</tt></td><td><tt>[[:alpha:]]</tt></td><td><tt>\a</tt> <tt>[[:alpha:]]</tt></td></tr>
+ <tr><td>Non-alphabetical character</td><td></td><td class="na"></td><td></td><td></td><td><tt>\A</tt></td></tr>
+ <tr><td>Any alphanumerical character</td><td><tt>[[:alnum:]]</tt></td><td class="na"></td><td><tt>[[:alnum:]]</tt></td><td><tt>[[:alnum:]]</tt></td><td><tt>[[:alnum:]]</tt></td></tr>
+ <tr><td>ASCII</td><td><tt>[[:ascii:]]</tt></td><td class="na"></td><td><tt>[[:ascii:]]</tt></td><td><tt>[[:ascii:]]</tt></td><td class="na"></td></tr>
+ <tr><td>Character equivalents (e = é = è) (as per locale)</td><td></td><td class="na"></td><td><tt>[[=e=]]</tt></td><td><tt>[[=e=]]</tt></td><td><tt>[[=e=]]</tt></td></tr>
  <tr><th colspan="6">Zero-width assertions</th></tr>
- <tr><td>Word boundary</td><td>\b</td><td>\b</td><td class="na"></td><td class="na"></td><td>\&lt; / \&gt;</td></tr>
- <tr><td>Anywhere but word boundary</td><td>\B</td><td>\B</td><td class="na"></td><td class="na"></td><td class="na"></td></tr>
- <tr><td>Beginning of line/string</td><td>^ / \A</td><td>^ / \A</td><td>^</td><td>^</td><td>^ (beginning of pattern ) \_^</td></tr>
- <tr><td>End of line/string</td><td>$ / \Z</td><td>$ / \Z</td><td>$</td><td>$</td><td>$ (end of pattern) \_$</td></tr>
+ <tr><td>Word boundary</td><td><tt>\b</tt></td><td><tt>\b</tt></td><td class="na"></td><td class="na"></td><td><tt>\&lt;</tt> / <tt>\&gt;</tt></td></tr>
+ <tr><td>Anywhere but word boundary</td><td><tt>\B</tt></td><td><tt>\B</tt></td><td class="na"></td><td class="na"></td><td class="na"></td></tr>
+ <tr><td>Beginning of line/string</td><td><tt>^</tt> / <tt>\A</tt></td><td><tt>^</tt> / <tt>\A</tt></td><td><tt>^</tt></td><td><tt>^</tt></td><td><tt>^</tt> (beginning of pattern ) <tt>\_^</tt></td></tr>
+ <tr><td>End of line/string</td><td><tt>$</tt> / <tt>\Z</tt></td><td><tt>$</tt> / <tt>\Z</tt></td><td><tt>$</tt></td><td><tt>$</tt></td><td><tt>$</tt> (end of pattern) <tt>\_$</tt></td></tr>
  <tr><th colspan="6">Captures and groups</th></tr>
- <tr><td>Capturing group</td><td>(...) (?&lt;name&gt;...)</td><td>(...) (?P&lt;name&gt;...)</td><td>\(...\)</td><td>(...)</td><td>\(...\)</td></tr>
- <tr><td>Non-capturing group</td><td>(?:...)</td><td>(?:...)</td><td class="na"></td><td class="na"></td><td>\%(...\)</td></tr>
- <tr><td>Backreference to a specific group.</td><td>\1 \g1 \g{-1}</td><td>\1</td><td>\1</td><td>\1 non-official</td><td>\1</td></tr>
- <tr><td>Named backreference</td><td>\g{name} \k&lt;name&gt;</td><td>(?P=name)</td><td class="na"></td><td class="na"></td><td class="na"></td></tr>
+ <tr><td>Capturing group</td><td><tt>(...)</tt> <tt>(?&lt;name&gt;...)</tt></td><td><tt>(...)</tt> <tt>(?P&lt;name&gt;...)</tt></td><td><tt>\(...\)</tt></td><td><tt>(...)</tt></td><td><tt>\(...\)</tt></td></tr>
+ <tr><td>Non-capturing group</td><td><tt>(?:...)</tt></td><td><tt>(?:...)</tt></td><td class="na"></td><td class="na"></td><td><tt>\%(...\)</tt></td></tr>
+ <tr><td>Backreference to a specific group.</td><td><tt>\1</tt> <tt>\g1</tt> <tt>\g{-1}</tt></td><td><tt>\1</tt></td><td><tt>\1</tt></td><td><tt>\1</tt> non-official</td><td><tt>\1</tt></td></tr>
+ <tr><td>Named backreference</td><td><tt>\g{name}</tt> <tt>\k&lt;name&gt;</tt></td><td><tt>(?P=name)</tt></td><td class="na"></td><td class="na"></td><td class="na"></td></tr>
  <tr><th colspan="6">Look-around</th></tr>
- <tr><td>Positive look-ahead</td><td>(?=...)</td><td>(?=...)</td><td class="na"></td><td class="na"></td><td>\(...\)\@=</td></tr>
- <tr><td>Negative look-ahead</td><td>(?!...)</td><td>(?!...)</td><td class="na"></td><td class="na"></td><td>\(...\)\@!</td></tr>
- <tr><td>Positive look-behind</td><td>(?&lt;=...)</td><td>(?<=...)</td><td class="na"></td><td class="na"></td><td>\(...\)\@&lt;=</td></tr>
- <tr><td>Negative look-behind</td><td>(?&lt;!...)</td><td>(?&lt;!...)</td><td class="na"></td><td class="na"></td><td>\(...\)\@&lt;!</td></tr>
+ <tr><td>Positive look-ahead</td><td><tt>(?=...)</tt></td><td><tt>(?=...)</tt></td><td class="na"></td><td class="na"></td><td><tt>\(...\)\@=</tt></td></tr>
+ <tr><td>Negative look-ahead</td><td><tt>(?!...)</tt></td><td><tt>(?!...)</tt></td><td class="na"></td><td class="na"></td><td><tt>\(...\)\@!</tt></td></tr>
+ <tr><td>Positive look-behind</td><td><tt>(?&lt;=...)</tt></td><td><tt>(?<=...)</tt></td><td class="na"></td><td class="na"></td><td><tt>\(...\)\@&lt;=</tt></td></tr>
+ <tr><td>Negative look-behind</td><td><tt>(?&lt;!...)</tt></td><td><tt>(?&lt;!...)</tt></td><td class="na"></td><td class="na"></td><td><tt>\(...\)\@&lt;!</tt></td></tr>
  <tr><th colspan="6">Multiplicity</th></tr>
- <tr><td>0 or 1</td><td>?</td><td>?</td><td>\?</td><td>?</td><td>\?</td></tr>
- <tr><td>0 or more</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td></tr>
- <tr><td>1 or more</td><td>+</td><td>+</td><td>\+</td><td>+</td><td>\+</td></tr>
- <tr><td>Specific number</td><td>{n} {n,m} {n,}</td><td>{n} {n,m} {n,}</td><td>\{n\} \{n,m\} \{n,\}</td><td>{n} {n,m} {n,}</td><td>\{n} \{n,m} \{n,}</td></tr>
- <tr><td>0 or 1, non-greedy</td><td>?+</td><td>??</td><td class="na"></td><td class="na"></td><td></td></tr>
- <tr><td>0 or more, non-greedy</td><td>*+</td><td>*?</td><td class="na"></td><td class="na"></td><td>\{-}</td></tr>
- <tr><td>1 or more, non-greedy</td><td>++</td><td>+?</td><td class="na"></td><td class="na"></td><td></td></tr>
- <tr><td>Specific number, non-greedy</td><td>{n,m}+ {n,}+</td><td>{n,m}? {n,}?</td><td class="na"></td><td class="na"></td><td>\{-n,m} \{-n,}</td></tr>
+ <tr><td>0 or 1</td><td><tt>?</tt></td><td><tt>?</tt></td><td><tt>\?</tt></td><td><tt>?</tt></td><td><tt>\?</tt></td></tr>
+ <tr><td>0 or more</td><td><tt>*</tt></td><td><tt>*</tt></td><td><tt>*</tt></td><td><tt>*</tt></td><td><tt>*</tt></td></tr>
+ <tr><td>1 or more</td><td><tt>+</tt></td><td><tt>+</tt></td><td><tt>\+</tt></td><td><tt>+</tt></td><td><tt>\+</tt></td></tr>
+ <tr><td>Specific number</td><td><tt>{n}</tt> <tt>{n,m}</tt> <tt>{n,}</tt></td><td><tt>{n}</tt> <tt>{n,m}</tt> <tt>{n,}</tt></td><td><tt>\{n\}</tt> <tt>\{n,m\}</tt> <tt>\{n,\}</tt></td><td><tt>{n}</tt> <tt>{n,m}</tt> <tt>{n,}</tt></td><td><tt>\{n}</tt> <tt>\{n,m}</tt> <tt>\{n,}</tt></td></tr>
+ <tr><td>0 or 1, non-greedy</td><td><tt>?+</tt></td><td><tt>??</tt></td><td class="na"></td><td class="na"></td><td></td></tr>
+ <tr><td>0 or more, non-greedy</td><td><tt>*+</tt></td><td><tt>*?</tt></td><td class="na"></td><td class="na"></td><td><tt>\{-}</tt></td></tr>
+ <tr><td>1 or more, non-greedy</td><td><tt>++</tt></td><td><tt>+?</tt></td><td class="na"></td><td class="na"></td><td></td></tr>
+ <tr><td>Specific number, non-greedy</td><td><tt>{n,m}+</tt> <tt>{n,}+</tt></td><td><tt>{n,m}?</tt> <tt>{n,}?</tt></td><td class="na"></td><td class="na"></td><td><tt>\{-n,m}</tt> <tt>\{-n,}</tt></td></tr>
  <tr><th colspan="6">Other</th></tr>
- <tr><td>Independent non-backtracking pattern</td><td>(?&gt;...)</td><td class="na"></td><td class="na"></td><td class="na"></td><td>\(...\)\@&gt;</td></tr>
- <tr><td>Make case-sensitive/insensitive</td><td>(?i) / (?-i)</td><td>(?i) / (?-i)</td><td class="na"></td><td class="na"></td><td>\c / \C</td></tr>
+ <tr><td>Independent non-backtracking pattern</td><td><tt>(?&gt;...)</tt></td><td class="na"></td><td class="na"></td><td class="na"></td><td><tt>\(...\)\@&gt;</tt></td></tr>
+ <tr><td>Make case-sensitive/insensitive</td><td><tt>(?i)</tt> / <tt>(?-i)</tt></td><td><tt>(?i)</tt> / <tt>(?-i)</tt></td><td class="na"></td><td class="na"></td><td><tt>\c</tt> / <tt>\C</tt></td></tr>
 </table>
 
 <h1 id="programs">Programs</h1>
