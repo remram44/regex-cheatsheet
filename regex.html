@@ -39,22 +39,22 @@ td.na {
  <tr><th colspan="6">Character classes</th></tr>
  <tr><td>Any character (except newline)</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
  <tr><td>Any character (including newline)</td><td class="na"></td><td class="na"></td><td class="na"></td><td class="na"></td><td>\_.</td></tr>
- <tr><td>Match a "word" character (alphanumeric plus "_")</td><td>\w [[:word:]]</td><td>\w</td><td>[:word:]</td><td>[:word:]</td><td>\w</td></tr>
- <tr><td>Case</td><td>[[:upper:]] / [[:lower:]]</td><td class="na"></td><td>[:upper:] / [:lower:]</td><td>[:upper:] / [:lower:]</td><td>\u [:upper:] / \l [:lower:]</td></tr>
+ <tr><td>Match a "word" character (alphanumeric plus "_")</td><td>\w [[:word:]]</td><td>\w</td><td>[[:word:]]</td><td>[[:word:]]</td><td>\w</td></tr>
+ <tr><td>Case</td><td>[[:upper:]] / [[:lower:]]</td><td class="na"></td><td>[[:upper:]] / [[:lower:]]</td><td>[[:upper:]] / [[:lower:]]</td><td>\u [[:upper:]] / \l [[:lower:]]</td></tr>
  <tr><td>Match a non-"word" character</td><td>\W</td><td>\W</td><td class="na"></td><td class="na"></td><td>\W</td></tr>
- <tr><td>Match a whitespace character (except newline)</td><td class="na"></td><td class="na"></td><td></td><td></td><td>\s [:space:]</td></tr>
- <tr><td>Whitespace including newline</td><td>\s [[:space:]]</td><td>\s</td><td>[:space:]</td><td>[:space:]</td><td>\_s</td></tr>
+ <tr><td>Match a whitespace character (except newline)</td><td class="na"></td><td class="na"></td><td></td><td></td><td>\s [[:space:]]</td></tr>
+ <tr><td>Whitespace including newline</td><td>\s [[:space:]]</td><td>\s</td><td>[[:space:]]</td><td>[[:space:]]</td><td>\_s</td></tr>
  <tr><td>Match a non-whitespace character</td><td>\S</td><td>\S</td><td class="na"></td><td class="na"></td><td>\S</td></tr>
- <tr><td>Match a digit character</td><td>\d [[:digit:]]</td><td>\d</td><td>[:digit:]</td><td>[:digit:]</td><td>\d [:digit:]</td></tr>
+ <tr><td>Match a digit character</td><td>\d [[:digit:]]</td><td>\d</td><td>[[:digit:]]</td><td>[[:digit:]]</td><td>\d [[:digit:]]</td></tr>
  <tr><td>Match a non-digit character</td><td>\D</td><td>\D</td><td class="na"></td><td class="na"></td><td>\D</td></tr>
- <tr><td>Any hexadecimal digit</td><td>[[:xdigit:]]</td><td class="na"></td><td>[:xdigit:]</td><td>[:xdigit:]</td><td>\x [:xdigit:]</td></tr>
+ <tr><td>Any hexadecimal digit</td><td>[[:xdigit:]]</td><td class="na"></td><td>[[:xdigit:]]</td><td>[[:xdigit:]]</td><td>\x [[:xdigit:]]</td></tr>
  <tr><td>Any octal digit</td><td></td><td class="na"></td><td></td><td></td><td>\o</td></tr>
- <tr><td>Any graphical character excluding "word" characters</td><td>[[:punct:]]</td><td class="na"></td><td>[:punct:]</td><td>[:punct:]</td><td>[:punct:]</td></tr>
- <tr><td>Any alphabetical character</td><td>[[:alpha:]]</td><td class="na"></td><td>[:alpha:]</td><td>[:alpha:]</td><td>\a [:alpha:]</td></tr>
+ <tr><td>Any graphical character excluding "word" characters</td><td>[[:punct:]]</td><td class="na"></td><td>[[:punct:]]</td><td>[[:punct:]]</td><td>[[:punct:]]</td></tr>
+ <tr><td>Any alphabetical character</td><td>[[:alpha:]]</td><td class="na"></td><td>[[:alpha:]]</td><td>[[:alpha:]]</td><td>\a [[:alpha:]]</td></tr>
  <tr><td>Non-alphabetical character</td><td></td><td class="na"></td><td></td><td></td><td>\A</td></tr>
- <tr><td>Any alphanumerical character</td><td>[[:alnum:]]</td><td class="na"></td><td>[:alnum:]</td><td>[:alnum:]</td><td>[:alnum:]</td></tr>
- <tr><td>ASCII</td><td>[[:ascii:]]</td><td class="na"></td><td>[:ascii:]</td><td>[:ascii:]</td><td class="na"></td></tr>
- <tr><td>Character equivalents (e = é = è) (as per locale)</td><td></td><td class="na"></td><td>[[=e=]]</td><td>[[=e=]]</td><td>[=e=]</td></tr>
+ <tr><td>Any alphanumerical character</td><td>[[:alnum:]]</td><td class="na"></td><td>[[:alnum:]]</td><td>[[:alnum:]]</td><td>[[:alnum:]]</td></tr>
+ <tr><td>ASCII</td><td>[[:ascii:]]</td><td class="na"></td><td>[[:ascii:]]</td><td>[[:ascii:]]</td><td class="na"></td></tr>
+ <tr><td>Character equivalents (e = é = è) (as per locale)</td><td></td><td class="na"></td><td>[[=e=]]</td><td>[[=e=]]</td><td>[[=e=]]</td></tr>
  <tr><th colspan="6">Zero-width assertions</th></tr>
  <tr><td>Word boundary</td><td>\b</td><td>\b</td><td class="na"></td><td class="na"></td><td>\&lt; / \&gt;</td></tr>
  <tr><td>Anywhere but word boundary</td><td>\B</td><td>\B</td><td class="na"></td><td class="na"></td><td class="na"></td></tr>
