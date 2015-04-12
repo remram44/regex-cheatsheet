@@ -53,14 +53,14 @@ tt {
  <tr><td>Match a non-"word" character</td><td><tt>\W</tt></td><td><tt>\W</tt></td><td class="na"></td><td class="na"></td><td><tt>\W</tt></td></tr>
  <tr><td>Match a whitespace character (except newline)</td><td class="na"></td><td class="na"></td><td></td><td></td><td><tt>\s</tt> <tt>[[:space:]]</tt></td></tr>
  <tr><td>Whitespace including newline</td><td><tt>\s</tt> <tt>[[:space:]]</tt></td><td><tt>\s</tt></td><td><tt>[[:space:]]</tt></td><td><tt>[[:space:]]</tt></td><td><tt>\_s</tt></td></tr>
- <tr><td>Match a non-whitespace character</td><td><tt>\S</tt></td><td><tt>\S</tt></td><td class="na"></td><td class="na"></td><td><tt>\S</tt></td></tr>
+ <tr><td>Match a non-whitespace character</td><td><tt>\S</tt></td><td><tt>\S</tt></td><td><tt>[^[:space;]]</tt></td><td><tt>[^[:space;]]</tt></td><td><tt>\S</tt></td></tr>
  <tr><td>Match a digit character</td><td><tt>\d</tt> <tt>[[:digit:]]</tt></td><td><tt>\d</tt></td><td><tt>[[:digit:]]</tt></td><td><tt>[[:digit:]]</tt></td><td><tt>\d</tt> <tt>[[:digit:]]</tt></td></tr>
- <tr><td>Match a non-digit character</td><td><tt>\D</tt></td><td><tt>\D</tt></td><td class="na"></td><td class="na"></td><td><tt>\D</tt></td></tr>
+ <tr><td>Match a non-digit character</td><td><tt>\D</tt></td><td><tt>\D</tt></td><td><tt>[^[:digit:]]</tt></td><td><tt>[^[:digit:]]</tt></td><td><tt>\D</tt></td></tr>
  <tr><td>Any hexadecimal digit</td><td><tt>[[:xdigit:]]</tt></td><td class="na"></td><td><tt>[[:xdigit:]]</tt></td><td><tt>[[:xdigit:]]</tt></td><td><tt>\x</tt> <tt>[[:xdigit:]]</tt></td></tr>
  <tr><td>Any octal digit</td><td></td><td class="na"></td><td></td><td></td><td><tt>\o</tt></td></tr>
  <tr><td>Any graphical character excluding "word" characters</td><td><tt>[[:punct:]]</tt></td><td class="na"></td><td><tt>[[:punct:]]</tt></td><td><tt>[[:punct:]]</tt></td><td><tt>[[:punct:]]</tt></td></tr>
  <tr><td>Any alphabetical character</td><td><tt>[[:alpha:]]</tt></td><td class="na"></td><td><tt>[[:alpha:]]</tt></td><td><tt>[[:alpha:]]</tt></td><td><tt>\a</tt> <tt>[[:alpha:]]</tt></td></tr>
- <tr><td>Non-alphabetical character</td><td></td><td class="na"></td><td></td><td></td><td><tt>\A</tt></td></tr>
+ <tr><td>Non-alphabetical character</td><td></td><td class="na"></td><td><tt>[^[:alpha:]]</tt></td><td><tt>[^[:alpha:]]</tt></td><td><tt>\A</tt></td></tr>
  <tr><td>Any alphanumerical character</td><td><tt>[[:alnum:]]</tt></td><td class="na"></td><td><tt>[[:alnum:]]</tt></td><td><tt>[[:alnum:]]</tt></td><td><tt>[[:alnum:]]</tt></td></tr>
  <tr><td>ASCII</td><td><tt>[[:ascii:]]</tt></td><td class="na"></td><td><tt>[[:ascii:]]</tt></td><td><tt>[[:ascii:]]</tt></td><td class="na"></td></tr>
  <tr><td>Character equivalents (e = é = è) (as per locale)</td><td></td><td class="na"></td><td><tt>[[=e=]]</tt></td><td><tt>[[=e=]]</tt></td><td><tt>[[=e=]]</tt></td></tr>
