@@ -111,10 +111,14 @@ td.na {
     <tr><td>0 or more</td><td><code>*</code></td><td><code>*</code></td><td><code>*</code></td><td><code>*</code></td><td><code>*</code></td></tr>
     <tr><td>1 or more</td><td><code>+</code></td><td><code>+</code></td><td><code>\+</code></td><td><code>+</code></td><td><code>\+</code></td></tr>
     <tr><td>Specific number</td><td><code>{n}</code> <code>{n,m}</code> <code>{n,}</code></td><td><code>{n}</code> <code>{n,m}</code> <code>{n,}</code></td><td><code>\{n\}</code> <code>\{n,m\}</code> <code>\{n,\}</code></td><td><code>{n}</code> <code>{n,m}</code> <code>{n,}</code></td><td><code>\{n}</code> <code>\{n,m}</code> <code>\{n,}</code></td></tr>
-    <tr><td>0 or 1, non-greedy</td><td><code>?+</code></td><td><code>??</code></td><td class="na"></td><td class="na"></td><td></td></tr>
-    <tr><td>0 or more, non-greedy</td><td><code>*+</code></td><td><code>*?</code></td><td class="na"></td><td class="na"></td><td><code>\{-}</code></td></tr>
-    <tr><td>1 or more, non-greedy</td><td><code>++</code></td><td><code>+?</code></td><td class="na"></td><td class="na"></td><td></td></tr>
-    <tr><td>Specific number, non-greedy</td><td><code>{n,m}+</code> <code>{n,}+</code></td><td><code>{n,m}?</code> <code>{n,}?</code></td><td class="na"></td><td class="na"></td><td><code>\{-n,m}</code> <code>\{-n,}</code></td></tr>
+    <tr><td>0 or 1, non-greedy</td><td><code>??</code></td><td><code>??</code></td><td class="na"></td><td class="na"></td><td></td></tr>
+    <tr><td>0 or more, non-greedy</td><td><code>*?</code></td><td><code>*?</code></td><td class="na"></td><td class="na"></td><td><code>\{-}</code></td></tr>
+    <tr><td>1 or more, non-greedy</td><td><code>+?</code></td><td><code>+?</code></td><td class="na"></td><td class="na"></td><td></td></tr>
+    <tr><td>Specific number, non-greedy</td><td><code>{n,m}?</code> <code>{n,}?</code></td><td><code>{n,m}?</code> <code>{n,}?</code></td><td class="na"></td><td class="na"></td><td><code>\{-n,m}</code> <code>\{-n,}</code></td></tr>
+    <tr><td>0 or 1, don't give back on backtrack</td><td><code>?+</code></td><td class="na"></td><td class="na"></td><td class="na"></td><td class="na"></td></tr>
+    <tr><td>0 or more, don't give back on backtrack</td><td><code>*+</code></td><td class="na"></td><td class="na"></td><td class="na"></td><td class="na"></td></tr>
+    <tr><td>1 or more, don't give back on backtrack</td><td><code>++</code></td><td class="na"></td><td class="na"></td><td class="na"></td><td class="na"></td></tr>
+    <tr><td>Specific number, don't give back on backtrack</td><td><code>{n,m}+</code> <code>{n,}?</code></td><td class="na"></td><td class="na"></td><td class="na"></td><td class="na"></td></tr>
     <tr><th colspan="6">Other</th></tr>
     <tr><td>Independent non-backtracking pattern</td><td><code>(?&gt;...)</code></td><td class="na"></td><td class="na"></td><td class="na"></td><td><code>\(...\)\@&gt;</code></td></tr>
     <tr><td>Make case-sensitive/insensitive</td><td><code>(?i)</code> / <code>(?-i)</code></td><td><code>(?i)</code> / <code>(?-i)</code></td><td class="na"></td><td class="na"></td><td><code>\c</code> / <code>\C</code></td></tr>
