@@ -21,6 +21,6 @@ Note that this is still a work in progress; a lot of entries need some details
 in some kind of tooltip.
 
 
-[cc]: http://htmlpreview.github.io/?https://github.com/remram44/regex-cheatsheet/blob/master/regex.html
+[cc]: http://remram44.github.io/regex-cheatsheet/regex.html
 [is]: https://github.com/remram44/regex-cheatsheet/issues/new
 [pr]: https://github.com/remram44/regex-cheatsheet/compare/
