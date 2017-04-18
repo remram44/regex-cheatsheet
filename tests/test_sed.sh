@@ -189,3 +189,108 @@ check 'End of line' \
 'testing tests' \
 's/s$/x/g' \
 'testing testx'
+
+# Captures and groups
+
+checkb 'Capturing group' \
+'Name is Remi!' \
+'s/^.*is \(.*\)!$/\1/' \
+'Remi'
+checke 'Capturing group' \
+'Name is Remi!' \
+'s/^.*is (.*)!$/\1/' \
+'Remi'
+
+checkb 'Non-capturing parentheses' \
+'Some (dumb)text' \
+'s/(.*)//g' \
+'Some text'
+checke 'Non-capturing parentheses' \
+'Some (dumb)text' \
+'s/\(.*\)//g' \
+'Some text'
+
+checkb 'Backreference' \
+'ab be cd cc df' \
+'s/\([a-z]\)\1/xx/g' \
+'ab be cd xx df'
+checke 'Backreference' \
+'ab be cd cc df' \
+'s/([a-z])\1/xx/g' \
+'ab be cd xx df'
+
+# Look-around not supported in POSIX
+
+# Multiplicity
+
+checkb '0 or 1' \
+'bb bab baab baa?b baaab' \
+'s/baa\?b/x/g' \
+'bb x x baa?b baaab'
+checke '0 or 1' \
+'bb bab baab baa?b baaab' \
+'s/baa?b/x/g' \
+'bb x x baa?b baaab'
+
+checkb '0 or 1 (negative)' \
+'bb bab baab baa?b baaab' \
+'s/baa?b/x/g' \
+'bb bab baab x baaab'
+checke '0 or 1 (negative)' \
+'bb bab baab baa?b baaab' \
+'s/baa\?b/x/g' \
+'bb bab baab x baaab'
+
+checkb '1 or more' \
+'bb bab baab ba+b baaab' \
+'s/ba\+b/x/g' \
+'bb x x ba+b x'
+checke '1 or more' \
+'bb bab baab ba+b baaab' \
+'s/ba+b/x/g' \
+'bb x x ba+b x'
+
+checkb '1 or more (negative)' \
+'bb bab baab ba+b baaab' \
+'s/ba+b/x/g' \
+'bb bab baab x baaab'
+checke '1 or more (negative)' \
+'bb bab baab ba+b baaab' \
+'s/ba\+b/x/g' \
+'bb bab baab x baaab'
+
+checkb 'Specific number (1)' \
+'bb bab baab baaab baaaab' \
+'s/ba\{2\}b/x/g' \
+'bb bab x baaab baaaab'
+checke 'Specific number (1)' \
+'bb bab baab baaab baaaab' \
+'s/ba{2}b/x/g' \
+'bb bab x baaab baaaab'
+
+checkb 'Specific number (closed)' \
+'bb bab baab baaab baaaab' \
+'s/ba\{1,3\}b/x/g' \
+'bb x x x baaaab'
+checke 'Specific number (closed)' \
+'bb bab baab baaab baaaab' \
+'s/ba{1,3}b/x/g' \
+'bb x x x baaaab'
+
+checkb 'Specific number (open left)' \
+'bb bab baaab baaaab' \
+'s/ba\{,3\}b/x/g' \
+'x x x baaaab'
+checke 'Specific number (open left)' \
+'bb bab baaab baaaab' \
+'s/ba{,3}b/x/g' \
+'x x x baaaab'
+
+checkb 'Specific number (open right)' \
+'bb bab baaab baaaab' \
+'s/ba\{2,\}b/x/g' \
+'bb bab x x'
+checke 'Specific number (open right)' \
+'bb bab baaab baaaab' \
+'s/ba{2,}b/x/g' \
+'bb bab x x'
