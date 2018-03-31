@@ -1,6 +1,8 @@
 Cheatsheet for regex syntaxes
 =============================
 
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/remram44)
+
 Many programs use regular expression to find & replace text. However, they tend
 to come with their own different flavor.
 
