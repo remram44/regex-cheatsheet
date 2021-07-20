@@ -18,7 +18,11 @@ jobs:
       run: tidy -errors -quiet --drop-empty-elements no regex.html
 
   test_sed:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
     - name: Run sed tests
