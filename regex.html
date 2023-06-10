@@ -195,6 +195,13 @@ td.na {
 </table>
 </section>
 
+<section id="notes" class="group">
+<h1>Notes</h1>
+<ul>
+  <li>BRE comes in two flavors: basic REs and enhanced basic REs. Some features like <code>\+</code> are only available in programs using enhanced basic REs so you should not rely on them. For example, grep and sed on BSD or MacOS do not use enhanced basic REs, so you are better off using the portable <code>xx*</code> or <code>x\{1,\}</code> constructs instead of <code>x\+</code>.</li>
+</ul>
+</section>
+
         </div>
 
 <nav class="col-md-3 bs-docs-sidebar">
@@ -221,6 +228,9 @@ td.na {
                 <li><a href="#programs-editors">Text editors</a></li>
                 <li><a href="#programs-cmdline">Command-line tools</a></li>
             </ul>
+        </li>
+        <li>
+            <a href="#notes">Notes</a>
         </li>
     </ul>
 </nav>
