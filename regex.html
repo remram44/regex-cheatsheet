@@ -82,7 +82,7 @@ td.na {
 
 <table class="table table-bordered table-striped">
   <thead>
-    <tr><th>What</th><th><a href="http://perldoc.perl.org/perlre.html">Perl</a>/PCRE</th><th><a href="https://docs.python.org/library/re.html">Python's <code>re</code></a></th><th>POSIX (BRE)</th><th>POSIX extended (ERE)</th><th>Vim</th></tr>
+    <tr><th>What</th><th><a href="http://perldoc.perl.org/perlre.html">Perl</a>/PCRE</th><th><a href="https://docs.python.org/library/re.html">Python's <code>re</code></a></th><th>POSIX (BRE)</th><th>POSIX extended (ERE)</th><th>Vim (with <code>:set magic</code>)</th></tr>
   </thead>
   <tbody id="syntax-basics" class="subgroup">
     <tr><th colspan="6">Basics</th></tr>
@@ -99,7 +99,7 @@ td.na {
     <tr><td>Any character (including newline)</td><td class="na"></td><td class="na"></td><td class="na"></td><td class="na"></td><td><code>\_.</code></td></tr>
     <tr><td>Match a "word" character (alphanumeric plus <code>_</code>)</td><td><code>\w</code> <code>[[:word:]]</code></td><td><code>\w</code></td><td><code>\w</code></td><td><code>\w</code></td><td><code>\w</code></td></tr>
     <tr><td>Case</td><td><code>[[:upper:]]</code> / <code>[[:lower:]]</code></td><td class="na"></td><td><code>[[:upper:]]</code> / <code>[[:lower:]]</code></td><td><code>[[:upper:]]</code> / <code>[[:lower:]]</code></td><td><code>\u</code> <code>[[:upper:]]</code> / <code>\l</code> <code>[[:lower:]]</code></td></tr>
-    <tr><td>Match a non-"word" character</td><td><code>\W</code></td><td><code>\W</code></td><td class="na"></td><td class="na"></td><td><code>\W</code></td></tr>
+    <tr><td>Match a non-"word" character</td><td><code>\W</code></td><td><code>\W</code></td><td><code>\W</code></td><td><code>\W</code></td><td><code>\W</code></td></tr>
     <tr><td>Match a whitespace character (except newline)</td><td class="na"></td><td class="na"></td><td><code>\s</code> <code>[[:space:]]</code></td><td><code>\s</code> <code>[[:space:]]</code></td><td><code>\s</code> <code>[[:space:]]</code></td></tr>
     <tr><td>Whitespace including newline</td><td><code>\s</code> <code>[[:space:]]</code></td><td><code>\s</code></td><td class="na"></td><td class="na"></td><td><code>\_s</code></td></tr>
     <tr><td>Match a non-whitespace character</td><td><code>\S</code></td><td><code>\S</code></td><td><code>[^[:space:]]</code></td><td><code>[^[:space:]]</code></td><td><code>\S</code> <code>[^[:space:]]</code></td></tr>
@@ -153,7 +153,8 @@ td.na {
   <tbody id="syntax-other" class="subgroup">
     <tr><th colspan="6">Other</th></tr>
     <tr><td>Independent non-backtracking pattern</td><td><code>(?&gt;...)</code></td><td class="na"></td><td class="na"></td><td class="na"></td><td><code>\(...\)\@&gt;</code></td></tr>
-    <tr><td>Make case-sensitive/insensitive</td><td><code>(?i)</code> / <code>(?-i)</code></td><td><code>(?i)</code> / <code>(?-i)</code></td><td class="na"></td><td class="na"></td><td><code>\c</code> / <code>\C</code></td></tr>
+    <tr><td>Make case-insensitive</td><td><code>(?i)</code></td><td><code>(?i)</code></td><td class="na"></td><td class="na"></td><td><code>\c</code></td></tr>
+    <tr><td>Make case-sensitive</td><td><code>(?-i)</code></td><td class="na"></td><td class="na"></td><td class="na"></td><td><code>\C</code></td></tr>
   </tbody>
 </table>
 </section>
